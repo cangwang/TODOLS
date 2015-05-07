@@ -204,7 +204,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jha-bL-kpX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1672" y="348"/>
+            <point key="canvasLocation" x="1933" y="348"/>
         </scene>
         <!--填写事项-->
         <scene sceneID="Vbe-R2-pc1">
@@ -242,8 +242,8 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="CqF-hi-x5j"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yCq-w3-c9F">
                                 <rect key="frame" x="504" y="550" width="60" height="30"/>
@@ -669,8 +669,8 @@
         <image name="travel-selected" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="yWM-UD-Re7"/>
-        <segue reference="kx0-IN-wdv"/>
         <segue reference="wjg-3y-DBy"/>
+        <segue reference="s7q-l2-Pb7"/>
+        <segue reference="yWM-UD-Re7"/>
     </inferredMetricsTieBreakers>
 </document>

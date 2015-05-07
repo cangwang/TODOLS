@@ -3,28 +3,18 @@ import UIKit
 var todos: [TodoModel] = []
 var filteredTodos:[TodoModel] = []
 
-func dateFromString(dateStr:String)->NSDate?{
-    let dateFormater = NSDateFormatter()
-    dateFormater.dateFormat = "yyyy-MM-dd HH-mm"
-    let date = dateFormater.dateFromString(dateStr)
-    
-    return date
-    
-}
-
-
 class MyTableViewController: UITableViewController,UITableViewDataSource,UITableViewDelegate,UISearchDisplayDelegate{
 
     @IBOutlet var MytableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        /*
         todos = [TodoModel(id:"1",image:"child-selected",title:"1.去游乐场",date: dateFromString("2015-11-2 22-20")!,detail:"游",remind:true),
         TodoModel(id:"2",image:"shopping-cart-selected",title:"2.购物",date: dateFromString("2015-10-28 12-22")!,detail:"买",remind:true),
         TodoModel(id:"3",image:"phone-selected",title:"3.打电话",date: dateFromString("2015-10-30 14-34")!,detail:"打",remind:false),
         TodoModel(id:"4",image:"travel-selected",title:"4.Travel to Europe",date: dateFromString("2015-10-31 13-22")!,detail:"行",remind:false)]
-        
+        */
         //loadListItems()
         self.navigationItem.leftBarButtonItem = editButtonItem()
         self.navigationController?.topViewController.title = "Todo"
@@ -34,7 +24,9 @@ class MyTableViewController: UITableViewController,UITableViewDataSource,UITable
         
         tableView.contentOffset = contentOffset
         
-        
+        loadListItems()
+        println("沙盒文件夹路径:\(documentsDirectory())")
+        println("数据文件路径:\(dataFilePath())")
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -45,8 +37,6 @@ class MyTableViewController: UITableViewController,UITableViewDataSource,UITable
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
@@ -143,10 +133,7 @@ class MyTableViewController: UITableViewController,UITableViewDataSource,UITable
             vc.todo?.remind = vc.remindSwitch.on
             todos.append(vc.todo!)
         }
-        
-        //self.tableView.reloadData()
-        
-        
+ 
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -198,22 +185,12 @@ class MyTableViewController: UITableViewController,UITableViewDataSource,UITable
         // Pass the selected object to the new view controller.
     }
     */
-    /*
-    //获取沙盒路径
-    func documentsDirectory()->String{
-        var paths = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentationDirectory, NSSearchPathDomainMask.UserDomainMask, true)
-        
-        var documentDirectory:String = paths.first as! String
-        return documentDirectory
-    }
-    //获取数据文件地址
-    func dataFilePath()->String{
-        return documentsDirectory().stringByAppendingString("Todo.plist")
-    }
+    
+
     
     func loadListItems(){
         //获取本地数据文件地址
-        let path =  self.dataFilePath()
+        let path = dataFilePath()
         //声明文件管理器
         let defaultManager = NSFileManager()
         //通过文件地址判断数据文件是否存在
@@ -223,10 +200,23 @@ class MyTableViewController: UITableViewController,UITableViewDataSource,UITable
             //解码器
             let unarchiver = NSKeyedUnarchiver(forReadingWithData: data!)
             //归档时设置还原todo
-            todos = unarchiver.decodeObjectForKey("TodoList") as! Array
+            todos = unarchiver.decodeObjectForKey("TodoList") as! [TodoModel]
             unarchiver.finishDecoding()
+        }else{
+            saveListItems()
         }
     }
     
-    */
+    func saveListItems(){
+        var data = NSMutableData()
+        //申明一个归档处理对象
+        var archiver = NSKeyedArchiver(forWritingWithMutableData: data)
+        //将todos进行编码
+        archiver.encodeObject(todos, forKey: "TodoList")
+        //编码结束
+        archiver.finishEncoding()
+        //数据写入
+        data.writeToFile(dataFilePath(), atomically: true)
+        println("保存成功")
+    }
 }

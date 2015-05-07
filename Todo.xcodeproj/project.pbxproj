@@ -19,6 +19,7 @@
 		4563AD1D1A6B62910069862E /* TodoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4563AD1C1A6B62910069862E /* TodoTests.swift */; };
 		4563AD271A6B66680069862E /* MyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4563AD261A6B66680069862E /* MyTableViewController.swift */; };
 		4563AD291A6B66C90069862E /* TodoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4563AD281A6B66C90069862E /* TodoModel.swift */; };
+		4572CEAF1AFB47A000443C24 /* DateToString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4572CEAE1AFB47A000443C24 /* DateToString.swift */; };
 		45CE26541A6BD22100A8E196 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CE26531A6BD22100A8E196 /* DetailViewController.swift */; };
 		45E7F9BD1ACE239F006F2105 /* DetailInformationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E7F9BC1ACE239F006F2105 /* DetailInformationController.swift */; };
 /* End PBXBuildFile section */
@@ -50,6 +51,7 @@
 		4563AD1C1A6B62910069862E /* TodoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoTests.swift; sourceTree = "<group>"; };
 		4563AD261A6B66680069862E /* MyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTableViewController.swift; sourceTree = "<group>"; };
 		4563AD281A6B66C90069862E /* TodoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoModel.swift; sourceTree = "<group>"; };
+		4572CEAE1AFB47A000443C24 /* DateToString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateToString.swift; sourceTree = "<group>"; };
 		45CE26531A6BD22100A8E196 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		45E7F9BC1ACE239F006F2105 /* DetailInformationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailInformationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -112,6 +114,7 @@
 				4563AD011A6B62910069862E /* Supporting Files */,
 				4563AD261A6B66680069862E /* MyTableViewController.swift */,
 				4563AD281A6B66C90069862E /* TodoModel.swift */,
+				4572CEAE1AFB47A000443C24 /* DateToString.swift */,
 				4554DA7B1AF8A75200F97773 /* newdesign */,
 				45CE26531A6BD22100A8E196 /* DetailViewController.swift */,
 				45E7F9BC1ACE239F006F2105 /* DetailInformationController.swift */,
@@ -251,6 +254,7 @@
 				4554DA781AF8A1B300F97773 /* EventTypeController.swift in Sources */,
 				45E7F9BD1ACE239F006F2105 /* DetailInformationController.swift in Sources */,
 				4554DA7A1AF8A5E100F97773 /* TitleViewController.swift in Sources */,
+				4572CEAF1AFB47A000443C24 /* DateToString.swift in Sources */,
 				4563AD291A6B66C90069862E /* TodoModel.swift in Sources */,
 				4563AD271A6B66680069862E /* MyTableViewController.swift in Sources */,
 				4554DA7D1AF8A77700F97773 /* DateChooserViewController.swift in Sources */,

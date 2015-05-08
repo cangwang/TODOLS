@@ -21,6 +21,7 @@
 		4563AD291A6B66C90069862E /* TodoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4563AD281A6B66C90069862E /* TodoModel.swift */; };
 		4572CEAF1AFB47A000443C24 /* DateToString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4572CEAE1AFB47A000443C24 /* DateToString.swift */; };
 		45CE26541A6BD22100A8E196 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CE26531A6BD22100A8E196 /* DetailViewController.swift */; };
+		45CF59261AFC7A3C007F7317 /* DetailInformViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CF59251AFC7A3C007F7317 /* DetailInformViewController.swift */; };
 		45E7F9BD1ACE239F006F2105 /* DetailInformationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E7F9BC1ACE239F006F2105 /* DetailInformationController.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,7 @@
 		4563AD281A6B66C90069862E /* TodoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoModel.swift; sourceTree = "<group>"; };
 		4572CEAE1AFB47A000443C24 /* DateToString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateToString.swift; sourceTree = "<group>"; };
 		45CE26531A6BD22100A8E196 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		45CF59251AFC7A3C007F7317 /* DetailInformViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailInformViewController.swift; sourceTree = "<group>"; };
 		45E7F9BC1ACE239F006F2105 /* DetailInformationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailInformationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -77,6 +79,7 @@
 		4554DA7B1AF8A75200F97773 /* newdesign */ = {
 			isa = PBXGroup;
 			children = (
+				45CF59251AFC7A3C007F7317 /* DetailInformViewController.swift */,
 				4554DA771AF8A1B300F97773 /* EventTypeController.swift */,
 				4554DA791AF8A5E100F97773 /* TitleViewController.swift */,
 				4554DA7C1AF8A77700F97773 /* DateChooserViewController.swift */,
@@ -251,6 +254,7 @@
 				4563AD071A6B62910069862E /* Todo.xcdatamodeld in Sources */,
 				45CE26541A6BD22100A8E196 /* DetailViewController.swift in Sources */,
 				4554DA7F1AF903D100F97773 /* UpdateTodoViewController.swift in Sources */,
+				45CF59261AFC7A3C007F7317 /* DetailInformViewController.swift in Sources */,
 				4554DA781AF8A1B300F97773 /* EventTypeController.swift in Sources */,
 				45E7F9BD1ACE239F006F2105 /* DetailInformationController.swift in Sources */,
 				4554DA7A1AF8A5E100F97773 /* TitleViewController.swift in Sources */,

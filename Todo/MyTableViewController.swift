@@ -3,6 +3,8 @@ import UIKit
 var todos: [TodoModel] = []
 var filteredTodos:[TodoModel] = []
 
+var saveflag = false
+
 class MyTableViewController: UITableViewController,UITableViewDataSource,UITableViewDelegate,UISearchDisplayDelegate{
 
     @IBOutlet var MytableView: UITableView!
@@ -30,7 +32,11 @@ class MyTableViewController: UITableViewController,UITableViewDataSource,UITable
     }
     
     override func viewDidAppear(animated: Bool) {
-        tableView.reloadData()
+        if saveflag == true {
+            tableView.reloadData()
+            saveListItems()
+            saveflag = false
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -132,13 +138,24 @@ class MyTableViewController: UITableViewController,UITableViewDataSource,UITable
             vc.todo!.date = vc.datetimePicker.date
             vc.todo?.remind = vc.remindSwitch.on
             todos.append(vc.todo!)
+            vc.todo?.scheduleNotification()
+            saveflag = true
         }
- 
+        
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "EditTodo" {
             var vc = segue.destinationViewController as! UpdateTodoViewController
+            var indexPath = tableView.indexPathForSelectedRow()
+            
+            if let index = indexPath{
+                vc.todo = todos[index.row]
+            }
+        }
+        if segue.identifier == "ToDetail"{
+            var vc = segue.destinationViewController as! DetailInformViewController
+            
             var indexPath = tableView.indexPathForSelectedRow()
             
             if let index = indexPath{
@@ -187,7 +204,6 @@ class MyTableViewController: UITableViewController,UITableViewDataSource,UITable
     */
     
 
-    
     func loadListItems(){
         //获取本地数据文件地址
         let path = dataFilePath()

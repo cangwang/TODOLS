@@ -10,7 +10,7 @@ class UpdateTodoViewController: UIViewController {
     
     @IBAction func changeRemind(sender: AnyObject) {
         todo?.remind = remindSwitch.on
-        
+        todo?.scheduleNotification()
     }
     @IBOutlet weak var remindSwitch: UISwitch!
     var todo:TodoModel?
@@ -21,8 +21,7 @@ class UpdateTodoViewController: UIViewController {
         navigationController?.topViewController.title = "修改Todo"
         
         updateInformaiton()
-        
-        
+ 
     }
 
     

@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  Todo
+
+  Created by air on 15/5/13.
+  Copyright (c) 2015年 air. All rights reserved.
+*/
+Todo_List = "TodoList";
+My_Todo = "My Todo";
+Detail_Daily = "Detail Daily";

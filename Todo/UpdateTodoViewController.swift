@@ -9,7 +9,11 @@ class UpdateTodoViewController: UIViewController {
     @IBOutlet weak var dateLabel: UILabel!
     
     @IBAction func changeRemind(sender: AnyObject) {
-        todo?.remind = remindSwitch.on
+        if remindSwitch.on == true{
+            todo?.remind = 1
+        }else{
+            todo?.remind = 0
+        }
         todo?.scheduleNotification()
     }
     @IBOutlet weak var remindSwitch: UISwitch!
@@ -38,12 +42,16 @@ class UpdateTodoViewController: UIViewController {
         
         titleLabel.text = todo?.title
         let locale = NSLocale.currentLocale()
-        let dateFormat = NSDateFormatter.dateFormatFromTemplate("yyyy-MM-dd HH-mm", options: 0, locale: locale)
+        let dateFormat = NSDateFormatter.dateFormatFromTemplate("yyyy/MM/dd HH:mm", options: 0, locale: locale)
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = dateFormat
         dateLabel.text = dateFormatter.stringFromDate(todo!.date)
-        remindSwitch.on = todo!.remind
-        
+        if todo!.remind == 1{
+            remindSwitch.on = true
+        }else{
+            remindSwitch.on = false
+        }
+        todo?.scheduleNotification()
     }
 
     override func didReceiveMemoryWarning() {
@@ -94,7 +102,11 @@ class UpdateTodoViewController: UIViewController {
         if segue.identifier == "ToFinishUpdateDate" {
             var vc = segue.sourceViewController as! DateChooserViewController
             todo?.date = vc.datetimePicker.date
-            todo?.remind = vc.remindSwitch.on
+            if remindSwitch.on == true{
+                todo?.remind = 1
+            }else{
+                todo?.remind = 0
+            }
         }
         
         updateInformaiton()

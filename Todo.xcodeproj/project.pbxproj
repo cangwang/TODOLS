@@ -19,10 +19,9 @@
 		4563AD1D1A6B62910069862E /* TodoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4563AD1C1A6B62910069862E /* TodoTests.swift */; };
 		4563AD271A6B66680069862E /* MyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4563AD261A6B66680069862E /* MyTableViewController.swift */; };
 		4563AD291A6B66C90069862E /* TodoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4563AD281A6B66C90069862E /* TodoModel.swift */; };
-		4572CEAF1AFB47A000443C24 /* DateToString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4572CEAE1AFB47A000443C24 /* DateToString.swift */; };
-		45CE26541A6BD22100A8E196 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CE26531A6BD22100A8E196 /* DetailViewController.swift */; };
+		4572CDF71B023920008BD230 /* MyItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4572CDF61B023920008BD230 /* MyItemTableViewController.swift */; };
+		45AA5E891B037F36007F75F1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 45AA5E8B1B037F36007F75F1 /* Localizable.strings */; };
 		45CF59261AFC7A3C007F7317 /* DetailInformViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CF59251AFC7A3C007F7317 /* DetailInformViewController.swift */; };
-		45E7F9BD1ACE239F006F2105 /* DetailInformationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E7F9BC1ACE239F006F2105 /* DetailInformationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +35,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4542151E1B034A5C00E05983 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		4542151F1B034A5C00E05983 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		454215221B034AE000E05983 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		454215241B034AF100E05983 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		4554DA771AF8A1B300F97773 /* EventTypeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTypeController.swift; sourceTree = "<group>"; };
 		4554DA791AF8A5E100F97773 /* TitleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleViewController.swift; sourceTree = "<group>"; };
 		4554DA7C1AF8A77700F97773 /* DateChooserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateChooserViewController.swift; sourceTree = "<group>"; };
@@ -52,10 +55,10 @@
 		4563AD1C1A6B62910069862E /* TodoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoTests.swift; sourceTree = "<group>"; };
 		4563AD261A6B66680069862E /* MyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTableViewController.swift; sourceTree = "<group>"; };
 		4563AD281A6B66C90069862E /* TodoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoModel.swift; sourceTree = "<group>"; };
-		4572CEAE1AFB47A000443C24 /* DateToString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateToString.swift; sourceTree = "<group>"; };
-		45CE26531A6BD22100A8E196 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		4572CDF61B023920008BD230 /* MyItemTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyItemTableViewController.swift; sourceTree = "<group>"; };
+		45AA5E8A1B037F36007F75F1 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		45AA5E8C1B037F38007F75F1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		45CF59251AFC7A3C007F7317 /* DetailInformViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailInformViewController.swift; sourceTree = "<group>"; };
-		45E7F9BC1ACE239F006F2105 /* DetailInformationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailInformationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +82,7 @@
 		4554DA7B1AF8A75200F97773 /* newdesign */ = {
 			isa = PBXGroup;
 			children = (
+				4563AD261A6B66680069862E /* MyTableViewController.swift */,
 				45CF59251AFC7A3C007F7317 /* DetailInformViewController.swift */,
 				4554DA771AF8A1B300F97773 /* EventTypeController.swift */,
 				4554DA791AF8A5E100F97773 /* TitleViewController.swift */,
@@ -115,12 +119,9 @@
 				4563AD0F1A6B62910069862E /* LaunchScreen.xib */,
 				4563AD051A6B62910069862E /* Todo.xcdatamodeld */,
 				4563AD011A6B62910069862E /* Supporting Files */,
-				4563AD261A6B66680069862E /* MyTableViewController.swift */,
 				4563AD281A6B66C90069862E /* TodoModel.swift */,
-				4572CEAE1AFB47A000443C24 /* DateToString.swift */,
+				4572CDF51B023811008BD230 /* myItem */,
 				4554DA7B1AF8A75200F97773 /* newdesign */,
-				45CE26531A6BD22100A8E196 /* DetailViewController.swift */,
-				45E7F9BC1ACE239F006F2105 /* DetailInformationController.swift */,
 			);
 			path = Todo;
 			sourceTree = "<group>";
@@ -129,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				4563AD021A6B62910069862E /* Info.plist */,
+				45AA5E8B1B037F36007F75F1 /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -148,6 +150,14 @@
 				4563AD1B1A6B62910069862E /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4572CDF51B023811008BD230 /* myItem */ = {
+			isa = PBXGroup;
+			children = (
+				4572CDF61B023920008BD230 /* MyItemTableViewController.swift */,
+			);
+			name = myItem;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,6 +223,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 4563ACF51A6B62910069862E;
 			productRefGroup = 4563ACFF1A6B62910069862E /* Products */;
@@ -231,6 +242,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4563AD0C1A6B62910069862E /* Main.storyboard in Resources */,
+				45AA5E891B037F36007F75F1 /* Localizable.strings in Resources */,
 				4563AD111A6B62910069862E /* LaunchScreen.xib in Resources */,
 				4563AD0E1A6B62910069862E /* Images.xcassets in Resources */,
 			);
@@ -252,13 +264,11 @@
 			files = (
 				4563AD041A6B62910069862E /* AppDelegate.swift in Sources */,
 				4563AD071A6B62910069862E /* Todo.xcdatamodeld in Sources */,
-				45CE26541A6BD22100A8E196 /* DetailViewController.swift in Sources */,
 				4554DA7F1AF903D100F97773 /* UpdateTodoViewController.swift in Sources */,
 				45CF59261AFC7A3C007F7317 /* DetailInformViewController.swift in Sources */,
 				4554DA781AF8A1B300F97773 /* EventTypeController.swift in Sources */,
-				45E7F9BD1ACE239F006F2105 /* DetailInformationController.swift in Sources */,
 				4554DA7A1AF8A5E100F97773 /* TitleViewController.swift in Sources */,
-				4572CEAF1AFB47A000443C24 /* DateToString.swift in Sources */,
+				4572CDF71B023920008BD230 /* MyItemTableViewController.swift in Sources */,
 				4563AD291A6B66C90069862E /* TodoModel.swift in Sources */,
 				4563AD271A6B66680069862E /* MyTableViewController.swift in Sources */,
 				4554DA7D1AF8A77700F97773 /* DateChooserViewController.swift in Sources */,
@@ -288,6 +298,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				4563AD0B1A6B62910069862E /* Base */,
+				4542151E1B034A5C00E05983 /* zh-Hans */,
+				454215241B034AF100E05983 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -296,8 +308,19 @@
 			isa = PBXVariantGroup;
 			children = (
 				4563AD101A6B62910069862E /* Base */,
+				4542151F1B034A5C00E05983 /* zh-Hans */,
+				454215221B034AE000E05983 /* en */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		45AA5E8B1B037F36007F75F1 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				45AA5E8A1B037F36007F75F1 /* zh-Hans */,
+				45AA5E8C1B037F38007F75F1 /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

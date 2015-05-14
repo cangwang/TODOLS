@@ -1,77 +1,61 @@
 import UIKit
 
-var todos: [TodoModel] = []
-var filteredTodos:[TodoModel] = []
-
-var saveflag = false
-
-class MyTableViewController: UITableViewController,UITableViewDataSource,UITableViewDelegate,UISearchDisplayDelegate{
-
+class MyItemTableViewController: UITableViewController,UITableViewDataSource,UITableViewDelegate,UISearchDisplayDelegate{
+    
     @IBOutlet var MytableView: UITableView!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        //通知跳转监测器
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "drawAShape:", name: "actionOnePressed", object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "ShwoAMessage:", name: "actionTwoPressed", object: nil)
-        
+
         self.navigationItem.leftBarButtonItem = editButtonItem()
-        self.navigationController?.topViewController.title = NSLocalizedString("Todo_List",comment: "")
-        
-        var contentOffset = tableView.contentOffset
-        contentOffset.y += searchDisplayController!.searchBar.frame.size.height
-        
-        tableView.contentOffset = contentOffset
-        
-        println("沙盒文件夹路径:\(documentsDirectory())")
-        println("数据文件路径:\(dataFilePath())")
-        loadListItems()
+        self.navigationController?.topViewController.title = NSLocalizedString("My_Todo",comment: "")
+        //loadListItems()
+        //println("沙盒文件夹路径:\(documentsDirectory())")
+        //println("数据文件路径:\(dataFilePath())")
     }
     
+    func loadMyList(){
+        //filteredTodos = todos.filter(){$0.title.rangeOfString(searchString) != nil}
+        filteredTodos = todos.filter(){
+            $0.remind == 1
+        }
+    }
     
     override func viewDidAppear(animated: Bool) {
-        if saveflag == true { 
+        if saveflag == true {
             saveListItems()
             saveflag = false
         }
+        loadMyList()
         tableView.reloadData()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
         return 1
     }
-
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        if tableView == searchDisplayController?.searchResultsTableView {
-            return filteredTodos.count
-        }else{
-            return todos.count
-        }
-
+        return filteredTodos.count
     }
-
+    
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
-
+        
         // Configure the cell...
-    
+        
         var todo: TodoModel
         
-        if tableView == searchDisplayController?.searchResultsTableView{
-            todo = filteredTodos[indexPath.row] as TodoModel
-        }else{
-            todo = todos[indexPath.row] as TodoModel
-        }
+        todo = filteredTodos[indexPath.row] as TodoModel
         
         var image = cell.viewWithTag(101) as! UIImageView
         var title = cell.viewWithTag(102) as! UILabel
@@ -93,16 +77,16 @@ class MyTableViewController: UITableViewController,UITableViewDataSource,UITable
         filteredTodos = todos.filter(){$0.title.rangeOfString(searchString) != nil}
         return true
     }
-
-
+    
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the specified item to be editable.
-        return true
+    // Return NO if you do not want the specified item to be editable.
+    return true
     }
     */
-
+    
     
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
@@ -115,7 +99,7 @@ class MyTableViewController: UITableViewController,UITableViewDataSource,UITable
             
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 80
@@ -128,15 +112,16 @@ class MyTableViewController: UITableViewController,UITableViewDataSource,UITable
     
     @IBAction func close(segue: UIStoryboardSegue){
         println("closed")
+        //保存新信息
         if segue.identifier == "ToSaveNew" {
             var vc = segue.sourceViewController as! DateChooserViewController
             let uuid = NSUUID().UUIDString
             vc.todo!.id = uuid
             vc.todo!.title = "\(todos.count+1).\(vc.todo!.title)"
             vc.todo!.date = vc.datetimePicker.date
-            if vc.remindSwitch.on {
+            if vc.remindSwitch.on == true {
                 vc.todo?.remind = 1
-            }else{
+            }else {
                 vc.todo?.remind = 0
             }
             
@@ -145,23 +130,24 @@ class MyTableViewController: UITableViewController,UITableViewDataSource,UITable
             saveflag = true
         }
         
+        
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        //过渡到详细信息
-        if segue.identifier == "ToDetail"{
+        //过渡到事件信息
+        if segue.identifier == "ToMyDetail"{
             var vc = segue.destinationViewController as! DetailInformViewController
             
             var indexPath = tableView.indexPathForSelectedRow()
             
             if let index = indexPath{
-                vc.todo = todos[index.row]
+                vc.todo = filteredTodos[index.row]
             }
             //隐藏tabbar
             vc.hidesBottomBarWhenPushed = true
         }
         //过渡到创建事件
-        if segue.identifier == "ToEvent" {
+        if segue.identifier == "ToMyEvent" {
             var vc = segue.destinationViewController as! EventTypeController
             //隐藏tabbar
             vc.hidesBottomBarWhenPushed = true
@@ -171,38 +157,38 @@ class MyTableViewController: UITableViewController,UITableViewDataSource,UITable
     override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool{
         return editing
     }
-
+    
     override func tableView(tableView: UITableView, moveRowAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath){
         let todo = todos.removeAtIndex(sourceIndexPath.row)
         todos.insert(todo, atIndex: destinationIndexPath.row)
     }
-
+    
     /*
     // Override to support rearranging the table view.
     override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+    
     }
     */
     
-
+    /*
+    // Override to support conditional rearranging of the table view.
+    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    // Return NO if you do not want the item to be re-orderable.
+    return true
+    }
+    */
+    
+    /*
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+    }
+    */
+    
+    
     func loadListItems(){
         //获取本地数据文件地址
         let path = dataFilePath()
@@ -220,10 +206,6 @@ class MyTableViewController: UITableViewController,UITableViewDataSource,UITable
         }else{
             saveListItems()
         }
-        
-        //
-        
-        
     }
     
     func saveListItems(){
@@ -237,22 +219,6 @@ class MyTableViewController: UITableViewController,UITableViewDataSource,UITable
         //数据写入
         data.writeToFile(dataFilePath(), atomically: true)
         println("保存成功")
-        
-        //保存到安装包目录下
-        //let path = NSBundle.mainBundle().pathForResource("todol", ofType: "plist")
-        
-    }
-    
-    //通知执行
-    func drawAShape(notification:NSNotification){
-        println("5s")
-    }
-    
-    func ShwoAMessage(notification:NSNotification){
-        var message:UIAlertController = UIAlertController(title: "Todo", message: "请选择", preferredStyle: UIAlertControllerStyle.Alert)
-        message.addAction(UIAlertAction(title: "我知道了", style: UIAlertActionStyle.Default, handler: nil))
-        self.presentViewController(message, animated: true, completion: nil)
-        
-        
     }
 }
+

@@ -26,9 +26,11 @@ class DetailInformViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationController?.topViewController.title = "详细日程"
+        navigationController?.topViewController.title = NSLocalizedString("Detail_Daily",comment: "")
+        /*
         changeButton = UIBarButtonItem(title: "修改", style: UIBarButtonItemStyle.Plain, target: self, action: "ToUpdatePage:")
         self.navigationItem.rightBarButtonItem = changeButton
+        */
         
     }
     func ToUpdatePage(){
@@ -54,11 +56,16 @@ class DetailInformViewController: UIViewController {
         titleButton.setTitle(todo?.title, forState: UIControlState.Normal)
         detailLab.text = todo?.detail
         let locale = NSLocale.currentLocale()
-        let dateFormat = NSDateFormatter.dateFormatFromTemplate("yyyy-MM-dd HH-mm", options: 0, locale: locale)
+        let dateFormat = NSDateFormatter.dateFormatFromTemplate("yyyy/MM/dd HH:mm", options: 0, locale: locale)
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = dateFormat
         dateLab.text = dateFormatter.stringFromDate(todo!.date)
-        remindSwitch.on = todo!.remind
+        if todo!.remind == 1{
+            remindSwitch.on = true
+        }else{
+            remindSwitch.on = false
+        }
+        
         
     }
 

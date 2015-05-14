@@ -57,7 +57,7 @@ class EventTypeController: UIViewController {
         if todo == nil{
             childbutton.selected = true
             
-            todo = TodoModel(id: "", image: "", title: "", date: NSDate(),detail: "",remind:false)
+            todo = TodoModel(id: "", image: "", title: "", date: NSDate(),detail: "",remind:0)
         }else{
             //已经存在的选项
             if todo?.image == "child-selected" {
@@ -73,6 +73,8 @@ class EventTypeController: UIViewController {
         if todo!.id == ""{
            updateButton.hidden = true
         }
+        
+        
         
     }
 

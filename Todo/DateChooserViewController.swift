@@ -30,7 +30,7 @@ class DateChooserViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        if todo?.remind == true {
+        if todo!.remind == 1 {
             remindSwitch.on = true
         }else{
             remindSwitch.on = false

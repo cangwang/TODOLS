@@ -1,0 +1,96 @@
+
+/* Class = "UILabel"; text = "是否打开自动提示："; ObjectID = "3i0-Pd-cMB"; */
+"3i0-Pd-cMB.text" = "Show auto remind:";
+
+/* Class = "UIButton"; normalTitle = "通话"; ObjectID = "3wK-ea-gPT"; */
+"3wK-ea-gPT.normalTitle" = "  Phone";
+
+/* Class = "UILabel"; text = "显示时间"; ObjectID = "4GF-Jk-Pxb"; */
+"4GF-Jk-Pxb.text" = "showtime";
+
+/* Class = "UIButton"; normalTitle = "旅行"; ObjectID = "5EI-3Y-sNN"; */
+"5EI-3Y-sNN.normalTitle" = "  Travel";
+
+/* Class = "UIButton"; normalTitle = "修改完成"; ObjectID = "5fk-BO-uQA"; */
+"5fk-BO-uQA.normalTitle" = "Finish";
+
+/* Class = "UIButton"; normalTitle = "title"; ObjectID = "64l-oR-5NL"; */
+"64l-oR-5NL.normalTitle" = "title";
+
+/* Class = "UIBarButtonItem"; title = "完成"; ObjectID = "6hJ-i2-OzP"; */
+"6hJ-i2-OzP.title" = "Finish";
+
+/* Class = "UILabel"; text = "去游乐场"; ObjectID = "Aaq-Cy-AAp"; */
+"Aaq-Cy-AAp.text" = "去游乐场";
+
+/* Class = "UILabel"; text = "内容："; ObjectID = "BGJ-XS-Fwg"; */
+"BGJ-XS-Fwg.text" = "Detail:";
+
+/* Class = "UIButton"; normalTitle = "约会"; ObjectID = "EQ1-ra-RDB"; */
+"EQ1-ra-RDB.normalTitle" = "  Appointment";
+
+/* Class = "UILabel"; text = "10/21/2014"; ObjectID = "HDi-71-aYq"; */
+"HDi-71-aYq.text" = "10/21/2014";
+
+/* Class = "UILabel"; text = "是否打开自动提示"; ObjectID = "Ilk-jD-tr5"; */
+"Ilk-jD-tr5.text" = "Set auto Remind";
+
+/* Class = "UIBarButtonItem"; title = "下一页"; ObjectID = "Nm7-xe-Yc2"; */
+"Nm7-xe-Yc2.title" = "Next";
+
+/* Class = "UILabel"; text = "去游乐场"; ObjectID = "PkQ-mM-HtT"; */
+"PkQ-mM-HtT.text" = "去游乐场";
+
+/* Class = "UILabel"; text = "事件详情"; ObjectID = "Pym-Hu-emy"; */
+"Pym-Hu-emy.text" = "EventDetail";
+
+/* Class = "UIButton"; normalTitle = "购物"; ObjectID = "QBr-Ot-boA"; */
+"QBr-Ot-boA.normalTitle" = "  Shopping";
+
+/* Class = "UILabel"; text = "主题："; ObjectID = "SXy-Zn-gml"; */
+"SXy-Zn-gml.text" = "Title:";
+
+/* Class = "UIButton"; normalTitle = "改变事项状态"; ObjectID = "V96-ns-w9I"; */
+"V96-ns-w9I.normalTitle" = "Change Item Status";
+
+/* Class = "UINavigationItem"; title = "填写时间"; ObjectID = "VLR-CP-4W1"; */
+"VLR-CP-4W1.title" = "Set Date";
+
+/* Class = "UILabel"; text = "10/21/2014"; ObjectID = "emH-hv-eXb"; */
+"emH-hv-eXb.text" = "10/21/2014";
+
+/* Class = "UILabel"; text = "显示时间"; ObjectID = "hVP-sn-R1u"; */
+"hVP-sn-R1u.text" = "Show Date";
+
+/* Class = "UIButton"; normalTitle = "修改"; ObjectID = "hoT-ix-Bys"; */
+"hoT-ix-Bys.normalTitle" = "Update";
+
+/* Class = "UINavigationItem"; title = "事件形式"; ObjectID = "iiU-4m-t9J"; */
+"iiU-4m-t9J.title" = "Event Style";
+
+/* Class = "UIButton"; normalTitle = "修改事项"; ObjectID = "irY-7u-1He"; */
+"irY-7u-1He.normalTitle" = "Update Item";
+
+/* Class = "UIBarButtonItem"; title = "下一页"; ObjectID = "l2S-qM-pCa"; */
+"l2S-qM-pCa.title" = "Next";
+
+/* Class = "UINavigationItem"; title = "填写事项"; ObjectID = "m4N-FS-Ps9"; */
+"m4N-FS-Ps9.title" = "Write Item";
+
+/* Class = "UILabel"; text = "是否打开自动提醒"; ObjectID = "uAy-Hl-jvM"; */
+"uAy-Hl-jvM.text" = "Set auto remind";
+
+/* Class = "UITextView"; text = "请完善内容（限100字内）"; ObjectID = "uKq-kg-tAi"; */
+"uKq-kg-tAi.text" = "Please write detail（less than 200 bytes）";
+
+/* Class = "UIButton"; normalTitle = "修改时间"; ObjectID = "vGq-iz-s8l"; */
+"vGq-iz-s8l.normalTitle" = "UpdateDate";
+
+/* Class = "UIButton"; normalTitle = "修改完成"; ObjectID = "yCq-w3-c9F"; */
+"yCq-w3-c9F.normalTitle" = "Finish";
+
+/* Class = "UILabel"; text = "主题"; ObjectID = "yd4-CB-zvU"; */
+"yd4-CB-zvU.text" = "Title";
+
+/* Class = "UIButton"; normalTitle = "修改完成"; ObjectID = "ylC-nH-hXM"; */
+"ylC-nH-hXM.normalTitle" = "Finish";
